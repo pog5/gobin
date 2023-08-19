@@ -117,7 +117,7 @@ func respond(w http.ResponseWriter, r *http.Request) {
 		<body>
 			<div id="nav">
 		    	<a class="nav-left" onclick="submit()">[upload]</a>
-		    	<a href="https://github.com/pog5/gogobin">[about]</a>
+		    	<a href="https://github.com/pog5/gobin">[about]</a>
 			</div>
 			<div id="content-wrapper">
 		    	<textarea autofocus id="content" spellcheck="false" placeholder="Type or paste your content here, then click 'upload'..."></textarea>
