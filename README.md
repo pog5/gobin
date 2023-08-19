@@ -13,5 +13,7 @@ Stores pastes using random 3 letter file names in current directory
 
 ### """API"""
 Access UI: `GET http://localhost`
+
 Read paste: `GET http://localhost/000` 
+
 Create paste: `POST http://localhost/` with your GZip content as Body
