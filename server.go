@@ -28,7 +28,6 @@ func respond(w http.ResponseWriter, r *http.Request) {
 		}
 		randomNumber := fmt.Sprint(rand.Intn(1000) + 1)
 		pastePath := fmt.Sprint("pastes/" + randomNumber)
-		_ = os.Mkdir("pastes", os.ModePerm)
 		os.WriteFile(pastePath, paste, 0644)
 		fmt.Fprintf(w, `{"key": "%s"}`, randomNumber)
 		return
