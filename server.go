@@ -27,7 +27,9 @@ func respond(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 		randomNumber := fmt.Sprint(rand.Intn(1000) + 1)
-		os.WriteFile(randomNumber, paste, 0644)
+		pastePath := fmt.Sprint("pastes/" + randomNumber)
+		_ := os.Mkdir("pastes", os.ModePerm)
+		os.WriteFile(pastePath, paste, 0644)
 		fmt.Fprintf(w, `{"key": "%s"}`, randomNumber)
 		return
 	}
@@ -109,7 +111,7 @@ func respond(w http.ResponseWriter, r *http.Request) {
 					xhr.send(compressed);
 		            xhr.onload = () => {
 		                const fileKey = JSON.parse(xhr.responseText).key;
-						window.location.href = "/" + fileKey;
+						window.location.href = "/pastes/" + fileKey;
 		            }
 		        }
 		    </script>
